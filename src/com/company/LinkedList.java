@@ -30,6 +30,7 @@ public class LinkedList {
 
     public boolean delete(int index) {
         if (index < 0 || index >= n.length-1) return false;
+        if (n.length > 2) n[index-1].setNext(n[index+1]);
         Node[] r = new Node[n.length];
         for (int j = 0; j < n.length; j++) r[j] = n[j];
         n = new Node[n.length-1];
